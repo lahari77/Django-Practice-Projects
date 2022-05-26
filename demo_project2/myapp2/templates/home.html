@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+{% block content %}
+	<h1>The main cast of Riverdale:</h1>
+	{% for i in req %}
+	<h4><i>{{i}}</h4>
+	{% endfor %}
+
+{% endblock %}
