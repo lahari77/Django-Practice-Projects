@@ -1,0 +1,49 @@
+{% extends 'movies/home.html' %}
+{% block content %}
+
+<div class="container mt-3">
+	<h1 class="alert alert-info text-center">ShowMovies</h1>
+	<table class="table table-bordered table-hover table-stripped">
+		<tr class="text-primary bg-white">
+			<thead>
+				<th>S.no</th>
+				<th>TitleName</th>
+				<th>Poster</th>
+				<th>Actor_Name</th>
+				<th>Actress_Name</th>
+				<th>Trailer</th>
+				<th colspan ="2">Operations</th>
+			</thead>
+		</tr>
+		<tr>
+			{% for i in data %}
+			<tbody>
+				<td>{{forloop.counter}}</td>
+				<td>{{i.title_name}}</td>
+				<td>
+					<img src="{{i.poster.url}}" alt="no poster" height="50px" width="50px">
+				</td>
+				<td>{{i.actor_name}}</td>
+				<td>{{i.actress_name}}</td>
+				<td>
+					<video loop class="embed-responsive-item thumbnails" controls width="200" height="100">
+<source src="{{i.trailer.url}}" type="video/mp4">
+</video>
+				</td>
+				<td>
+					<a href="{% url 'editmovie' i.id %}">
+						<i class="fa fa-edit" style="font-size:20px;color:green"></i>
+					</a>
+				</td>
+				<td>
+					<a href="">
+						<i class="fa fa-trash" style="font-size:20px;color:red"></i>
+					</a>
+				</td>
+			</tbody>
+			{% endfor%}
+		</tr>
+	</table>
+</div>
+
+{% endblock %}

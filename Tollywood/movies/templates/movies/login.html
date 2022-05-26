@@ -1,0 +1,21 @@
+{% extends 'movies/home.html' %}
+
+{% block content %}
+
+
+<div class="container col-md-4 card card-body
+bg-info mt-3" style="background-color:lightgreen;">
+	<h1 class="alert alert-primary text-center">LoginForm</h1>
+	<form method="POST">
+		{% csrf_token %}
+
+		<strong>{{form.as_p}}</strong>
+
+		<div class="text-center">
+			<input type="submit" value="Login" class="btn btn-outline-info btn-lg mt-2">
+		</div>
+	</form>
+
+</div>
+
+{% endblock %}

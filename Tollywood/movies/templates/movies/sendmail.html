@@ -1,0 +1,21 @@
+{% extends 'movies/home.html' %}
+{% block content %}
+
+<div class="container mt-3 bg-primary card card-body col-md-6">
+	<h1 class="alert alert-info text-center">SendEmail</h1>
+	<form method="POST">
+		{% csrf_token %}
+		<label for="to">Email</label>
+		<input type="text" name="to" class="form-control" placeholder="Enter Your Email" id="to">
+
+		<label for="sub">Subject</label>
+		<input type="text" name="subject" class="form-control" placeholder="Enter Your Subject" id="sub">
+
+		<label for="bdy">Body</label>
+		<input type="text" name="body" class="form-control" placeholder="Enter Your body Information" id="bdy">
+
+		<div class="text-center">
+			<input type="submit" value="SendMail" class="btn btn-success btn-lg mt-3">
+		</div>
+	</form>
+	{% endblock %}

@@ -1,0 +1,21 @@
+{% extends 'movies/home.html' %}
+
+{% block content %}
+<style type="text/css"> form>ul,.helptext{ display: none; } </style>
+
+<div class="container col-md-4 card card-body
+bg-info mt-3" style="background-color:lightcyan;">
+	<h1 class="alert alert-primary text-center">RegistrationForm</h1>
+	<form method="POST">
+		{% csrf_token %}
+
+		<strong>{{form.as_p}}</strong>
+
+		<div class="text-center">
+			<input type="submit" value="Register" class="btn btn-outline-primary btn-lg mt-2">
+		</div>
+	</form>
+
+</div>
+
+{% endblock %}
