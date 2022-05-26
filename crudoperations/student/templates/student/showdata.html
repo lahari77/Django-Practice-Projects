@@ -1,0 +1,39 @@
+{% extends 'student/home.html' %}
+{% block content %}
+
+<div class="container mt-3">
+  <h1 class="alert alert-info text-center">ShowData</h1>
+  <table class="table table-bordered table-hover table-stripped">
+    <tr class="bg-primary text-white">
+      <thead>
+        <th>S.no</th>
+        <th>RollNO</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Branch</th>
+        <th>MobileNO</th>
+        <th colspan="2">Operations</th>
+      </thead>
+    </tr>
+    <tr>
+      {% for i in data %}
+      <tbody>
+        <td>{{forloop.counter}}</td>
+        <td>{{i.rollno}}</td>
+        <td>{{i.name}}</td>
+        <td>{{i.email}}</td>
+        <td>{{i.branch}}</td>
+        <td>{{i.mobileno}}</td>
+        <td>
+          <a href="{% url 'editstudent' i.id %}" class="btn btn-success btn-md">Edit</a>
+        </td>
+        <td>
+          <a href="{% url 'deletestudent' i.id %}" class="btn btn-danger btn-md">Delete</a>
+        </td>
+      </tbody>
+      {% endfor %}
+    </tr>
+  </table>
+</div>
+
+{% endblock %}

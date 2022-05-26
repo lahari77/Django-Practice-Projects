@@ -1,0 +1,31 @@
+{% extends 'student/home.html' %}
+{% block content %}
+
+<div class="container col-md-4 mt-3 card card-body"
+style="background-color: lightyellow;">
+  <h1 class="alert alert-primary text-center">EditStudent</h1>
+  <form action="{% url 'editstudent' stu.id %}" method="POST">
+    {% csrf_token %}
+<label for="roll" >Rollno</label>
+<input type="text" name="rollno" id="roll" class="form-control" placeholder="Enter your Rollno" value = {{stu.rollno}}>
+<label for="nm" >Name</label>
+<input type="text" name="name" id="nm" class="form-control" placeholder="Enter your Name" value = {{stu.name}}>
+<label for="em" >Email</label>
+<input type="email" name="email" id="em" class="form-control" placeholder="Enter your Email" value = {{stu.email}}>
+<label for="br">Branch</label>
+<select class="form-control" name="branch" id="br">
+  <option>Choose....</option>
+  <option value="CSE" {% if stu.branch == CSE %} selected {% endif %}>CSE</option>
+  <option value="ECE" {% if stu.branch == ECE %}selected{% endif %}>ECE</option>
+  <option value="EEE" {% if stu.branch == EEE %}selected{% endif %}>EEE</option>
+  <option value="MEC" {% if stu.branch == MEC %}selected{% endif %}>MEC</option>
+</select>
+<label for="mb" >MobileNo</label>
+<input type="text" name="mobileno" id="mb" class="form-control" placeholder="Enter your MobileNO" value = {{stu.mobileno}}>
+<div class="text-center">
+  <input type="submit" value="Update" class="btn btn-outline-warning btn-lg mt-3">
+</div>
+  </form>
+</div>
+
+{% endblock %}

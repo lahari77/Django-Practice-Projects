@@ -1,0 +1,15 @@
+{% extends 'student/home.html' %}
+{% block content %}
+
+  <div class="container mt-3 card card-body">
+    <form action="{% url 'deletestudent' studel.id %}" method="POST">
+      {% csrf_token %}
+      <h1 class="text-danger">Are you sure you want to Delete {{studel.rollno}}...?</h1>
+      <input type="submit" value="Delete" class="btn btn-danger btn-md">
+      <a href="{% url 'showdata' %}" class="btn btn-warning btn-md">Cancel</a>
+    </form>
+
+
+  </div>
+
+{% endblock %}

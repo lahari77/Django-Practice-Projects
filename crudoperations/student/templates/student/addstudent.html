@@ -1,0 +1,29 @@
+{% extends 'student/home.html' %}
+{% block content %}
+<div class="container col-md-4 mt-3 card card-body"
+style="background-color: lightgreen;">
+  <h1 class="alert alert-primary text-center">AddStudent</h1>
+  <form action="#" method="POST">
+    {% csrf_token %}
+    <label for="roll" >Rollno</label>
+<input type="text" name="rollno" id="roll" class="form-control" placeholder="Enter your Rollno" required>
+<label for="nm" >Name</label>
+<input type="text" name="name" id="nm" class="form-control" placeholder="Enter your Name" required>
+<label for="em" >Email</label>
+<input type="email" name="email" id="em" class="form-control" placeholder="Enter your Email" required>
+<label for="br">Branch</label>
+<select class="form-control" name="branch" id="br">
+  <option>Choose....</option>
+  <option value="CSE">CSE</option>
+  <option value="ECE">ECE</option>
+  <option value="EEE">EEE</option>
+  <option value="MEC">MEC</option>
+</select>
+<label for="mb" >MobileNo</label>
+<input type="text" name="mobileno" id="mb" class="form-control" placeholder="Enter your MobileNO" required>
+<div class="text-center">
+  <input type="submit" value="Add" class="btn btn-outline-success btn-lg mt-3">
+</div>
+  </form>
+</div>
+{% endblock %}

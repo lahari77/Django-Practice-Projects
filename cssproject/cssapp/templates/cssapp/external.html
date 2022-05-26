@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>ExternalCSS</title>
+	<link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+ <img src="{% static 'images/reg.png' %}">
+	<p>External CSS</p>
+	<form>
+		Name:<input type="text" name="" placeholder="Enter ur Name"><br><br>
+		Email:<input type="email" name="" placeholder="Enter ur email"><br><br>
+		Password:<input type="password" name=""   placeholder="Enter ****"><br><br>
+		<button type="submit" class="btn">Register</button>
+		<input type="reset" value="reset" class="res">
+	</form>
+</body>
+</html>
+
+
