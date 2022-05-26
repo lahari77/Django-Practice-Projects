@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<link rel="stylesheet"  href="{% static 'css/mystyle.css' %}">
+</head>
+<body>
+	<form action="{% url 'home' %}" method="POST">
+		{% csrf_token %}
+		{% if t1 is None %}
+	<input type="text" name="t1" value="0" readonly>
+	{% else %}
+	<input type="text" name="t1" value="{{t1}}" readonly>
+	{% endif %}
+	<input type="submit" name="team1" value="Team1"></input>
+	{% if t2 is None %}
+	<input type="text" name="t2" value="0" readonly>
+	{% else %}
+	<input type="text" name="t2" value="{{t2}}" readonly>
+	{% endif %}
+	<input type="submit" name="team2" value="Team2"></input>
+	</form>
+
+	<marquee direction="right" bgcolor="orange" height="50">Thank you for visiting</marquee>
+
+	<img src="{% static 'images/pic1.JPG' %}" width="100" height="100">
+
+	<h1>This is line1</h1>
+	<h1>This is line 2</h1>
+</body>
+</html>
